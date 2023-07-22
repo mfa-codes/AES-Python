@@ -1,7 +1,3 @@
-# Achtung !!!!
-# Bevor Sie das Programm ausführen, installieren Sie bitte die AES-Bibliotheke
-# mit ' pip3 install pycryptodome '
-
 from Crypto.Cipher import AES
 import binascii
 import os
@@ -41,17 +37,3 @@ class AESAlgo:
         text = aesCipher.decrypt_and_verify(ciphertext, authTag)
         return text
 
-
-
-
-"""
-print("\t\t\t!!! Programm Startet !!!\n")
-msg= input("Geben Sie die zu verschlüssenden Nachricht ein:\n>> ").encode("utf8")
-secretKey = os.urandom(32)
-print("\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
-encryptedMsg = encrypt_AES_GCM(msg, secretKey)
-print("\nVerschlüsselte Nachricht:\n", binascii.hexlify(secretKey))
-print("\n++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++\n")
-decryptedMsg = decrypt_AES_GCM(encryptedMsg, secretKey)
-print("Entschlüsselte Nachricht:\n>>", decryptedMsg.decode("utf8"))
-"""
